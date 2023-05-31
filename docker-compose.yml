@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  app:
+    image: 'flightboard:latest'
+    build:
+      context: .
+    container_name: flightboard
+    depends_on:
+      - flightboard-db
+
+  flightboard-db:
+    image: 'postgres:13.1-alpine'
+    container_name: flightboard-db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=flightboard-db
+      - POSTGRES_PASSWORD=V40jN2gavmfj1q9Ln5Aq
+      - PGUSER=flightboard-db
+      - POSTGRES_DB=flightboard-db
+
+networks:
+  default:
+    driver: bridge
