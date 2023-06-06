@@ -1,0 +1,18 @@
+.action-button {
+    background-color: #060b26;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    height: 30px;
+    padding: 8% 9% 3% 8%;
+    margin: 3%;
+    position: relative;
+    text-align: center;
+    vertical-align: baseline;
+    touch-action: manipulation;
+}

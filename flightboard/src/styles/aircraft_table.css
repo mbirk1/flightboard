@@ -1,0 +1,14 @@
+table{
+    border-collapse: collapse;
+}
+table thead tr th{
+    border-bottom: 1px solid #000000;
+    background-color: lightgray;
+}
+table th, table td {
+    border-left: 1px solid rgba(1,1,1,1);
+    border-right: 1px solid rgba(1,1,1,1);
+}
+table th, table td{
+    padding: 4px 8px;
+}

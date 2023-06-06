@@ -3,9 +3,9 @@ import Home from "./pages/Home";
 
 import "./styles/main.css"
 import {Navigate, Route, Routes} from "react-router-dom";
-import Navigation from "./components/Navigation";
-import FlightTable from "./components/FlightTable";
-import AircraftTable from "./components/AircraftTable";
+import Navigation from "./pages/Navigation";
+import FlightTable from "./pages/FlightTable";
+import AircraftTable from "./pages/AircraftTable";
 
 function App() {
     return (
