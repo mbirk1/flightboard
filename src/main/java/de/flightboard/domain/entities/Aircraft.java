@@ -15,15 +15,21 @@ public class Aircraft {
   private UUID id;
 
   @Column
-  private String registration;
+  private String model;
 
-  public Aircraft(UUID id, String registration) {
+  @Column
+  private Double height;
+  @Column
+  private Double width;
+  @Column
+  private Double length;
+
+  public Aircraft(UUID id, String model, Double height, Double width, Double length) {
     this.id = id;
-    this.registration = registration;
-  }
-
-  public Aircraft(String registration) {
-    this.registration = registration;
+    this.model = model;
+    this.height = height;
+    this.width = width;
+    this.length = length;
   }
 
   public Aircraft() {
@@ -34,7 +40,19 @@ public class Aircraft {
     return id;
   }
 
-  public String getRegistration() {
-    return registration;
+  public String getModel() {
+    return model;
+  }
+
+  public Double getHeight() {
+    return height;
+  }
+
+  public Double getWidth() {
+    return width;
+  }
+
+  public Double getLength() {
+    return length;
   }
 }

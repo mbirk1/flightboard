@@ -10,5 +10,19 @@ table th, table td {
     border-right: 1px solid rgba(1,1,1,1);
 }
 table th, table td{
-    padding: 4px 8px;
+    width: 260px;
+}
+
+#id {
+    width: auto;
+}
+
+#buttons {
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 2000px) {
+    table th, table td{
+        width: 114px;
+    }
 }
