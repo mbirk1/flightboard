@@ -1,5 +1,6 @@
 package de.flightboard.domain.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -10,11 +11,23 @@ public class Manufacturer {
   @Id
   private UUID id;
 
-  public void setId(UUID id) {
-    this.id = id;
+  @Column(name = "manufacturer_name")
+  private String name;
+
+  public Manufacturer() {
+    //for JPA
+  }
+
+  public Manufacturer(UUID uuid, String name) {
+    this.id = uuid;
+    this.name = name;
+  }
+
+  public String getName() {
+    return this.name;
   }
 
   public UUID getId() {
-    return id;
+    return this.id;
   }
 }

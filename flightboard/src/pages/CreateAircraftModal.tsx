@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useState} from "react";
 import "../styles/create-aircraft.css";
 import {Modal} from "@mui/material";
 import Button from "../HTMLComponents/Button";
@@ -6,6 +6,7 @@ import Label from "../HTMLComponents/Label";
 import Input from "../HTMLComponents/Input";
 import Select from "../HTMLComponents/Select";
 import {ManufacturerService} from "../services/ManufacturerService";
+import {Manufacturer} from "../models/Manufacturer";
 
 
 export default class CreateAircraftModal extends Component<any, any> {
@@ -30,6 +31,7 @@ export default class CreateAircraftModal extends Component<any, any> {
     }
 
     render() {
+        console.log(this.state.manufacturer)
         return (
             <div>
                 <Button text={"Flugzeug erstellen"} style={"create-button"} customClick={this.onClickButton}/>
@@ -73,4 +75,5 @@ export default class CreateAircraftModal extends Component<any, any> {
             </div>
         )
     }
-};
+}
+;
