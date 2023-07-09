@@ -1,5 +1,6 @@
 .modal-size {
-    height: 200%;
+    height: 2vh;
     width: 150%;
     border-radius: 5px;
+    margin-bottom: 2vh;
 }

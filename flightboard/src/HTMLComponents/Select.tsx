@@ -1,16 +1,15 @@
 import React from "react";
 
 export default function Select(props: any) {
-    const {value} = props;
-
+    const {value, style_type} = props;
     return (
-        <select>
+        <select className={style_type}>
             {
                value.map(
                     function (manu: any) {
                         return (
-                            <option>
-                                {manu.id}
+                            <option key={manu.id}>
+                                {manu.name}
                             </option>);
                     }
                 )

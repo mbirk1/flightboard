@@ -5,7 +5,9 @@ import Button from "../HTMLComponents/Button";
 import Label from "../HTMLComponents/Label";
 import Input from "../HTMLComponents/Input";
 import Select from "../HTMLComponents/Select";
-import {ManufacturerService} from "../services/ManufacturerService";
+import {getManufacturer} from "../services/ManufacturerService";
+import {createAircraft, getAircrafts} from "../services/AircraftService";
+import {Manufacturer} from "../models/manufacturer_model";
 
 
 export default class CreateAircraftModal extends Component<any, any> {
@@ -14,7 +16,7 @@ export default class CreateAircraftModal extends Component<any, any> {
         manufacturer: []
     }
 
-    onClickButton = (e: { preventDefault: () => void; }) => {
+    onClickButtonOpenModal = (e: { preventDefault: () => void; }) => {
         e.preventDefault()
         this.setState({openModal: true})
     }
@@ -24,49 +26,55 @@ export default class CreateAircraftModal extends Component<any, any> {
     }
 
     componentDidMount() {
-        ManufacturerService.getManufacturer().then((response: any) => {
-            this.setState({manufacturer: response.data})
+        getManufacturer().then((result: Manufacturer[]) => {
+            this.setState({manufacturer: result})
         });
     }
 
+    createAircraftFromModal(){
+        createAircraft();
+    }
+
     render() {
+        const manu_names = this.state.manufacturer;
         return (
             <div>
-                <Button text={"Flugzeug erstellen"} style={"create-button"} customClick={this.onClickButton}/>
+                <Button text={"Flugzeug erstellen"} style_type={"create-button"} customClick={this.onClickButtonOpenModal}/>
                 <Modal open={this.state.openModal} onClose={this.onCloseModal}>
                     <div className={"modal"}>
                         <h1 className={"header-line"}><Label text={"Neues Flugzeug anlegen"}/></h1>
                         <div className="parent">
                             <div className="model child">
-                                <Label text={"Model:"} style={"modal-label"}/>
+                                <Label text={"Model:"} style_type={"modal-label"}/>
                             </div>
                             <div className="model-input child">
-                                <Input type={"text"} style={"modal-size"}/>
+                                <Input type={"text"} style_type={"modal-size"}/>
                             </div>
                             <div className="manufacturer child">
-                                <Label text={"Hersteller:"} style={"modal-label"}/>
+                                <Label text={"Hersteller:"} style_type={"modal-label"}/>
                             </div>
                             <div className="manufacturer-input child">
-                                <Select value={this.state.manufacturer} style={"modal-size"}/>
+                                <Select value={this.state.manufacturer} style_type={"modal-size"}/>
                             </div>
                             <div className="height child">
-                                <Label text={"Höhe:"} style={"modal-label"}/>
+                                <Label text={"Höhe:"} style_type={"modal-label"}/>
                             </div>
                             <div className="height-input child">
-                                <Input type={"number"} style={"modal-size"}/>
+                                <Input type={"number"} style_type={"modal-size"}/>
                             </div>
                             <div className="width child">
-                                <Label text={"Breite:"} style={"modal-label"}/>
+                                <Label text={"Breite:"} style_type={"modal-label"}/>
                             </div>
                             <div className="width-input child">
-                                <Input type={"number"} style={"modal-size"}/>
+                                <Input type={"number"} style_type={"modal-size"}/>
                             </div>
                             <div className="length child">
-                                <Label text={"Länge:"} style={"modal-label"}/>
+                                <Label text={"Länge:"} style_type={"modal-label"}/>
                             </div>
                             <div className="length-input child">
-                                <Input type={"number"} style={"modal-size"}/>
+                                <Input type={"number"} style_type={"modal-size"}/>
                             </div>
+                            <Button text={"Erstellen"} style_type={"create-button"} customClick={this.createAircraftFromModal()}/>
                         </div>
                     </div>
                 </Modal>

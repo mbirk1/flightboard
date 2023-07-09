@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {AircraftService} from '../services/AircraftService';
 import "../styles/aircraft_table.css";
 import "../styles/main.css";
 import Button from "../HTMLComponents/Button";
@@ -7,6 +6,8 @@ import {IconContext} from "react-icons";
 import * as BsIcons from "react-icons/bs"
 import {Link} from "react-router-dom";
 import CreateAircraftModal from "./CreateAircraftModal";
+import {deleteAircraft, getAircrafts} from '../services/AircraftService';
+import {Aircraft} from "../models/aircraft_model";
 
 class AircraftTable extends Component<{}, { aircraft: any }> {
     state = {
@@ -15,21 +16,21 @@ class AircraftTable extends Component<{}, { aircraft: any }> {
     };
 
     componentDidMount() {
-        AircraftService.getAircrafts().then((response: any) => {
-            this.setState({aircraft: response.data})
-        });
+        getAircrafts().then((result: Aircraft[]) => {
+            this.setState({aircraft: result})
+        })
         this.setState({aircraft: this.state.aircraft})
     }
 
     render() {
-        function deleteAircraft(id: string) {
-            AircraftService.deleteAircraft(id);
+        function onClickDeleteAircraft(id: string) {
+            deleteAircraft(id);
         }
 
         return (
             <div className="content-container">
                 <h1 className="headline">Flugzeuge</h1>
-                    <CreateAircraftModal></CreateAircraftModal>
+                <CreateAircraftModal></CreateAircraftModal>
                 <table className="table">
                     <thead>
                     <tr>
@@ -59,11 +60,11 @@ class AircraftTable extends Component<{}, { aircraft: any }> {
                                                 <IconContext.Provider value={{color: "#FFF"}}>
                                                     <Link to={"/edit/" + craft.id}>
                                                         <Button text={<BsIcons.BsPencilFill/>}
-                                                                style="action-button"/>
+                                                                style_type="action-button"/>
                                                     </Link>
-                                                    <Link to={"/home"} onClick={() => deleteAircraft(craft.id)}>
+                                                    <Link to={"/home"} onClick={() => onClickDeleteAircraft(craft.id)}>
                                                         <Button text={<BsIcons.BsTrash3Fill/>}
-                                                                style="action-button"/>
+                                                                style_type="action-button"/>
                                                     </Link>
                                                 </IconContext.Provider>
                                             </div>

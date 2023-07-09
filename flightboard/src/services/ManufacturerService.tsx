@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
+import {Manufacturer} from "../models/manufacturer_model";
 
-export class ManufacturerService {
+export async function getManufacturer(): Promise<Manufacturer[]> {
+    const request: AxiosResponse<Manufacturer[]> = await axios.get('http://localhost:8080/manufacturer');
+    return request.data;
+}
 
-    static getManufacturer(){
-        return axios.get('http://localhost:8080/manufacturer');
-    }
-    static deleteManufacturer(id:string) {
-        axios.delete('http://localhost:8080/manufacturer/' + id)
-    }
+export async function deleteManufacturer(id: string) {
+    axios.delete('http://localhost:8080/manufacturer/' + id)
 }
