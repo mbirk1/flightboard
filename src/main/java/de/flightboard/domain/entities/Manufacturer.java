@@ -23,7 +23,7 @@ public class Manufacturer {
   }
 
   public UUID getId() {
-    return id;
+    return this.id;
   }
 
   public String getName() {
