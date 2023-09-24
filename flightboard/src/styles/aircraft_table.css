@@ -1,28 +1,31 @@
-table{
-    border-collapse: collapse;
+table {
+  border-collapse: collapse;
 }
-table thead tr th{
-    border-bottom: 1px solid #000000;
-    background-color: lightgray;
+table thead tr th {
+  border-bottom: 1px solid #000000;
+  background-color: lightgray;
 }
-table th, table td {
-    border-left: 1px solid rgba(1,1,1,1);
-    border-right: 1px solid rgba(1,1,1,1);
+table th,
+table td {
+  border-left: 1px solid rgba(1, 1, 1, 1);
+  border-right: 1px solid rgba(1, 1, 1, 1);
 }
-table th, table td{
-    width: 260px;
+table th,
+table td {
+  width: 260px;
 }
 
 #id {
-    width: auto;
+  width: auto;
 }
 
 #buttons {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 2000px) {
-    table th, table td{
-        width: 114px;
-    }
+  table th,
+  table td {
+    width: 114px;
+  }
 }
