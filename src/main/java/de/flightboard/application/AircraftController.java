@@ -24,6 +24,10 @@ public class AircraftController {
   @Inject
   private AircraftService aircraftService;
 
+  public AircraftController(AircraftService aircraftService) {
+    this.aircraftService = aircraftService;
+  }
+
   @GetMapping
   public List<Aircraft> findAll() {
     List<Aircraft> aircrafts = this.aircraftService.findAllAircraft();

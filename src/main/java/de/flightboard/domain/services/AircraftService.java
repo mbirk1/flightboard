@@ -15,6 +15,10 @@ public class AircraftService {
     @Inject
     private AircraftRepository aircraftRepository;
 
+    public AircraftService(AircraftRepository aircraftRepository) {
+        this.aircraftRepository = aircraftRepository;
+    }
+
     public List<Aircraft> findAllAircraft() {
         List<Aircraft> aircrafts = new ArrayList<>();
         this.aircraftRepository.findAll().forEach(aircrafts::add);
