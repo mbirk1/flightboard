@@ -1,8 +1,7 @@
 package de.flightboard.domain.services;
 
-
 import de.flightboard.IntegrationTest;
-import de.flightboard.domain.entities.Aircraft;
+import de.flightboard.domain.entities.Manufacturer;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,24 +17,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
         loader = AnnotationConfigContextLoader.class)
-public class AircraftServiceTest {
+public class ManufacturerServiceTest {
 
     @Autowired
-    private AircraftService aircraftService;
+    private ManufacturerService manufacturerService;
 
     @Test
-    public void getAllAircraftTest() {
-        List<Aircraft> aircraftList = this.aircraftService.findAllAircraft();
+    public void findAllTest(){
+        List<Manufacturer> manufacturers = this.manufacturerService.findAll();
 
-        assertEquals(2, aircraftList.size());
+        assertEquals(2, manufacturers.size());
     }
 
     @Test
-    public void deleteAircraftTest() {
-        List<Aircraft> aircraftList = this.aircraftService.findAllAircraft();
-        this.aircraftService.deleteAircraft(aircraftList.get(0).getId().toString());
-        aircraftList = this.aircraftService.findAllAircraft();
+    public void deleteManufacturerTest(){
+        List<Manufacturer> manufacturers = this.manufacturerService.findAll();
 
-        assertEquals(1, aircraftList.size());
+        this.manufacturerService.deleteManufacturer(manufacturers.get(0).getId());
+        manufacturers = this.manufacturerService.findAll();
+
+        assertEquals(1, manufacturers.size());
     }
 }

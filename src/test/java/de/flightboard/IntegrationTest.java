@@ -14,7 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 @ActiveProfiles("test")
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@SpringBootTest
+@SpringBootTest(properties = "spring.flyway.clean-disabled=false")
 @ContextConfiguration(classes = FlightboardApplication.class)
 @Testdatabase
 public @interface IntegrationTest {

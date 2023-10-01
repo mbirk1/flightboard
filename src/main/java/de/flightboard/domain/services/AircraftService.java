@@ -3,6 +3,7 @@ package de.flightboard.domain.services;
 import de.flightboard.domain.entities.Aircraft;
 import de.flightboard.infrastructure.AircraftRepository;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class AircraftService {
         this.aircraftRepository = aircraftRepository;
     }
 
+    @Transactional
     public List<Aircraft> findAllAircraft() {
         List<Aircraft> aircrafts = new ArrayList<>();
         this.aircraftRepository.findAll().forEach(aircrafts::add);
