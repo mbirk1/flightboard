@@ -1,5 +1,7 @@
 package de.flightboard.domain.entities;
 
+import de.flightboard.IntegrationTest;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
         loader = AnnotationConfigContextLoader.class)
-@SpringBootTest
+@IntegrationTest
 public class ManufacturerTest {
 
     @Test
