@@ -26,4 +26,4 @@
           run: mvn --batch-mode --update-snapshots test
 
         - name: Run build
-          run: mvn build
+          run: mvn install
