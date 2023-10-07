@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,6 +30,7 @@ jobs:
           npm install
       # build and test the apps
       - name: build
+        working-directory: ./flightboard
         run: |
           npm run build
           npm test
