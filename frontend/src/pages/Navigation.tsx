@@ -1,16 +1,21 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
 import { Transition } from '@headlessui/react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navigation(): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
+  library.add(faPlaneDeparture);
+
   return (
     <nav className="bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-            <FontAwesomeIcon icon="fa-thin fa-plane-departure" />
+            <div className="flex-shrink-0 text-white fill-current">
+              <FontAwesomeIcon icon="plane-departure" className="w-14 h-14" />
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
@@ -91,7 +96,6 @@ export default function Navigation(): React.ReactElement {
           </div>
         </div>
       </div>
-
       <Transition
         show={isOpen}
         enter="transition ease-out duration-100 transform"
