@@ -5,7 +5,12 @@ import Navigation from './pages/Navigation';
 function App(): React.ReactElement {
   return (
     <>
-      <Navigation />
+      <header>
+        <Navigation />
+      </header>
+      <main>
+        <h1></h1>
+      </main>
     </>
   );
 }
