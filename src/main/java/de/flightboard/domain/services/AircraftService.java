@@ -1,9 +1,12 @@
 package de.flightboard.domain.services;
 
+import de.flightboard.application.AircraftController;
 import de.flightboard.domain.entities.Aircraft;
 import de.flightboard.infrastructure.AircraftRepository;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,6 +19,8 @@ public class AircraftService {
     @Inject
     private AircraftRepository aircraftRepository;
 
+    private final static Logger LOG = LoggerFactory.getLogger(AircraftController.class);
+
     public AircraftService(AircraftRepository aircraftRepository) {
         this.aircraftRepository = aircraftRepository;
     }
@@ -24,6 +29,7 @@ public class AircraftService {
     public List<Aircraft> findAllAircraft() {
         List<Aircraft> aircrafts = new ArrayList<>();
         this.aircraftRepository.findAll().forEach(aircrafts::add);
+        LOG.info("Found "+aircrafts.size()+" aircrafts.");
         return aircrafts;
     }
 
