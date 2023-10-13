@@ -1,7 +1,7 @@
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false }
+  { name: 'Dashboard', href: 'dashboard', current: false },
+  { name: 'Flüge', href: 'flights', current: false },
+  { name: 'Hangar', href: 'hangar', current: false },
+  { name: 'Missionen', href: 'missions', current: false }
 ];
 export default navigation;

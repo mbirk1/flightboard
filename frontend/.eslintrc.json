@@ -252,7 +252,7 @@
     ],
     "max-len": [
       "warn",
-      132
+      140
     ],
     "max-nested-callbacks": [
       "warn",
