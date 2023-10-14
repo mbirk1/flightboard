@@ -26,6 +26,7 @@ jobs:
 
       # install applicaion dependencies
       - name: Install dependencies
+        working-directory: ./frontend
         run: |
           npm install
       # build and test the apps
