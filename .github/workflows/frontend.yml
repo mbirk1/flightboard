@@ -30,7 +30,7 @@ jobs:
           npm install
       # build and test the apps
       - name: build
-        working-directory: ./flightboard
+        working-directory: ./frontend
         run: |
           npm run build
           npm test
