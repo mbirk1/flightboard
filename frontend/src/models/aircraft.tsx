@@ -8,14 +8,7 @@ class Aircraft {
   width: number;
   manufacturer: Manufacturer;
 
-  constructor(
-    id: string,
-    model: string,
-    height: number,
-    length: number,
-    width: number,
-    manufacturer: Manufacturer
-  ) {
+  constructor(id: string, model: string, height: number, length: number, width: number, manufacturer: Manufacturer) {
     this.id = id;
     this.model = model;
     this.height = height;

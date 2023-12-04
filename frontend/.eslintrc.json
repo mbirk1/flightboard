@@ -3,20 +3,12 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "standard-with-typescript",
-    "plugin:react/recommended",
-    "eslint:recommended",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["standard-with-typescript", "plugin:react/recommended", "eslint:recommended", "plugin:prettier/recommended"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": "off",
@@ -32,15 +24,9 @@
     "curly": "error",
     "default-case": "warn",
     // the dot goes with the property when doing multiline
-    "dot-location": [
-      "warn",
-      "property"
-    ],
+    "dot-location": ["warn", "property"],
     "dot-notation": "warn",
-    "eqeqeq": [
-      "error",
-      "smart"
-    ],
+    "eqeqeq": ["error", "smart"],
     "guard-for-in": "warn",
     "no-alert": "error",
     "no-caller": "error",
@@ -91,10 +77,7 @@
     "no-warning-comments": [
       "warn",
       {
-        "terms": [
-          "TODO",
-          "FIXME"
-        ],
+        "terms": ["TODO", "FIXME"],
         "location": "start"
       }
     ],
@@ -102,21 +85,12 @@
     "radix": "warn",
     "vars-on-top": "error",
     // Enforces the style of wrapped functions
-    "wrap-iife": [
-      "error",
-      "outside"
-    ],
+    "wrap-iife": ["error", "outside"],
     "yoda": "error",
     // Strict Mode - for ES6, never use strict.
-    "strict": [
-      "error",
-      "never"
-    ],
+    "strict": ["error", "never"],
     // Variables
-    "init-declarations": [
-      "error",
-      "always"
-    ],
+    "init-declarations": ["error", "always"],
     "no-catch-shadow": "warn",
     "no-delete-var": "error",
     "no-label-var": "error",
@@ -131,13 +105,7 @@
     // Disallow hoisting - let & const don't allow hoisting anyhow
     "no-use-before-define": "error",
     // Node.js and CommonJS
-    "callback-return": [
-      "warn",
-      [
-        "callback",
-        "next"
-      ]
-    ],
+    "callback-return": ["warn", ["callback", "next"]],
     "global-require": "error",
     "handle-callback-err": "warn",
     "no-mixed-requires": "warn",
@@ -148,14 +116,8 @@
     "no-restricted-modules": "off",
     "no-sync": "warn",
     // ECMAScript 6 support
-    "arrow-body-style": [
-      "error",
-      "always"
-    ],
-    "arrow-parens": [
-      "error",
-      "always"
-    ],
+    "arrow-body-style": ["error", "always"],
+    "arrow-parens": ["error", "always"],
     "arrow-spacing": [
       "error",
       {
@@ -164,10 +126,7 @@
       }
     ],
     "constructor-super": "error",
-    "generator-star-spacing": [
-      "error",
-      "before"
-    ],
+    "generator-star-spacing": ["error", "before"],
     "no-confusing-arrow": "error",
     "no-constant-condition": "error",
     "no-class-assign": "error",
@@ -175,19 +134,13 @@
     "no-dupe-class-members": "error",
     "no-this-before-super": "error",
     "no-var": "warn",
-    "object-shorthand": [
-      "warn",
-      "never"
-    ],
+    "object-shorthand": ["warn", "never"],
     "prefer-arrow-callback": "warn",
     "prefer-spread": "warn",
     "prefer-template": "warn",
     "require-yield": "error",
     // Stylistic - everything here is a warning because of style.
-    "block-spacing": [
-      "warn",
-      "always"
-    ],
+    "block-spacing": ["warn", "always"],
     "brace-style": [
       "warn",
       "1tbs",
@@ -203,24 +156,12 @@
         "after": true
       }
     ],
-    "comma-style": [
-      "warn",
-      "last"
-    ],
-    "computed-property-spacing": [
-      "warn",
-      "never"
-    ],
-    "consistent-this": [
-      "warn",
-      "self"
-    ],
+    "comma-style": ["warn", "last"],
+    "computed-property-spacing": ["warn", "never"],
+    "consistent-this": ["warn", "self"],
     "eol-last": "warn",
     "func-names": "warn",
-    "func-style": [
-      "warn",
-      "declaration"
-    ],
+    "func-style": ["warn", "declaration"],
     "id-length": [
       "warn",
       {
@@ -228,40 +169,19 @@
         "max": 32
       }
     ],
-    "indent": [
-      "warn",
-      2
-    ],
-    "jsx-quotes": [
-      "warn",
-      "prefer-double"
-    ],
-    "linebreak-style": [
-      "warn",
-      "unix"
-    ],
+    "indent": ["warn", 2],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "linebreak-style": ["warn", "windows"],
     "lines-around-comment": [
       "warn",
       {
         "beforeBlockComment": true
       }
     ],
-    "max-depth": [
-      "warn",
-      8
-    ],
-    "max-len": [
-      "warn",
-      140
-    ],
-    "max-nested-callbacks": [
-      "warn",
-      8
-    ],
-    "max-params": [
-      "warn",
-      8
-    ],
+    "max-depth": ["warn", 8],
+    "max-len": ["warn", 140],
+    "max-nested-callbacks": ["warn", 8],
+    "max-params": ["warn", 8],
     "new-cap": "warn",
     "new-parens": "warn",
     "no-array-constructor": "warn",
@@ -280,31 +200,13 @@
     "no-trailing-spaces": "warn",
     "no-underscore-dangle": "warn",
     "no-unneeded-ternary": "warn",
-    "object-curly-spacing": [
-      "warn",
-      "always"
-    ],
+    "object-curly-spacing": ["warn", "always"],
     "one-var": "off",
-    "operator-assignment": [
-      "warn",
-      "never"
-    ],
-    "operator-linebreak": [
-      "warn",
-      "after"
-    ],
-    "padded-blocks": [
-      "warn",
-      "never"
-    ],
-    "quote-props": [
-      "warn",
-      "consistent-as-needed"
-    ],
-    "quotes": [
-      "warn",
-      "single"
-    ],
+    "operator-assignment": ["warn", "never"],
+    "operator-linebreak": ["warn", "after"],
+    "padded-blocks": ["warn", "never"],
+    "quote-props": ["warn", "consistent-as-needed"],
+    "quotes": ["warn", "single"],
     "semi-spacing": [
       "warn",
       {
@@ -312,23 +214,11 @@
         "after": true
       }
     ],
-    "semi": [
-      "error",
-      "always"
-    ],
+    "semi": ["error", "always"],
     "sort-vars": "off",
-    "space-before-blocks": [
-      "warn",
-      "always"
-    ],
-    "space-before-function-paren": [
-      "warn",
-      "never"
-    ],
-    "space-in-parens": [
-      "warn",
-      "never"
-    ],
+    "space-before-blocks": ["warn", "always"],
+    "space-before-function-paren": ["warn", "never"],
+    "space-in-parens": ["warn", "never"],
     "space-infix-ops": [
       "warn",
       {
@@ -336,10 +226,7 @@
       }
     ],
     "space-unary-ops": "error",
-    "spaced-comment": [
-      "warn",
-      "always"
-    ],
+    "spaced-comment": ["warn", "always"],
     "wrap-regex": "warn"
   }
 }
