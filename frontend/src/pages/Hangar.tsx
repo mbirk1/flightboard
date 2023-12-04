@@ -17,11 +17,15 @@ export default function Hangar(): React.ReactElement {
         setLoading(false);
       });
   }, []);
-  return (
-    <ul>
-      {hangar.map((aircraft) => (
-        <li key={aircraft}>{aircraft}</li>
-      ))}
-    </ul>
-  );
+  return <table className="table">
+    <thead className={"thead"}>
+    <tr className={"table-row"}>
+      <td className="table-cell"></td>
+      <td className="table-cell"></td>
+      <td className="table-cell"></td>
+      <td className="table-cell"></td>
+      <td className="table-cell"></td>
+    </tr>
+    </thead>
+  </table>;
 }

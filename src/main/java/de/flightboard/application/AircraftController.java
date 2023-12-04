@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/aircraft")
+@CrossOrigin(origins = "http://localhost:3000")
 public class AircraftController {
 
     @Inject
@@ -20,8 +21,7 @@ public class AircraftController {
 
     @GetMapping
     public List<Aircraft> findAll() {
-        List<Aircraft> aircrafts = this.aircraftService.findAllAircraft();
-        return aircrafts;
+      return this.aircraftService.findAllAircraft();
     }
 
     @DeleteMapping(path = "/{id}")
